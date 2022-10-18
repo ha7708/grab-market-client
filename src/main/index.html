@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그랩마켓</title>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- axios 로 네트워크 통신 라이브러리 -->
+    <!--    react의 버전을 수정하는 코드
+            npm install --save react@^[버전 정보] react-dom@[버전 정보] -->
+    <!-- npm install react@^[버전 정보] react-dom@[버전 정보] 똑같이 17.0.2
+         npm install axios@0.21.0 
+         npm install react-router-dom@5.2.0
+         에러가 계속 나서 강제로 설치했다. (--force 붙여줌)
+         npm install react-router-dom@5.2.0 --force
+        -->
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-area">
+            <img src="../../public/images/icons/logo.png" alt="로고" />
+        </div>
+    </div>
+    <div id="body">
+        <div id="banner">
+            <img src="../../public/images/banners/banner1.png" alt="배너" />
+        </div>
+        <h1>판매되는 상품들</h1>
+        <div id="product-list">
+            <!-- 하단 script 에서 불러옴. -->
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+
+
+
+<script>
+    /* 실습 3 */
+    /* 네트워크 통신결과를 스크립트로 가져오기 */
+    /*
+    axios
+        .get('https://d7d9f7b8-942d-483f-9318-d16882377829.mock.pstmn.io/products')
+        .then(function (result) {
+            console.log('통신결과: ', result);
+            const products = result.data.products;
+
+            let productsHtml = "";
+            for (var i = 0; i < products.length; i++) {
+                let product = products[i];
+                productsHtml = productsHtml +
+                    '<div class="product-card">' +
+                    '<img class="product-img" src="' +
+                    product.imageUrl +
+                    '" alt="' + product.alt + '" />' +
+                    '<div class="product-contents">' +
+                    '<span class="product-name">' +
+                    product.name +
+                    '</span>' +
+                    '<span class="product-price">' +
+                    product.price + '원' +
+                    '</span>' +
+                    '<div class="product-seller">' +
+                    '<img class="product-avatar" src="../../public/images/icons/avatar.png" alt="아바타" />' +
+                    '<span>' +
+                    product.seller +
+                    '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            }
+            document.querySelector("#product-list").innerHTML = productsHtml;
+        }).catch(function (error) {
+            console.log('error 발생: ', error);
+        });
+    */
+
+
+
+
+
+
+    /* 실습 2 */
+    /* JS 코드를 사용하여 뿌려주는 방식 (네트워크로 해당 정보들을 받았다고 가정) */
+    /*
+        var products = [{
+            name: '농구공',
+            price: 100000,
+            seller: '조던',
+            imageUrl: '../../public/images/products/basketball1.jpeg',
+            alt: '농구공'
+        }, {
+            name: '축구공',
+            price: 50000,
+            seller: '메시',
+            imageUrl: '../../public/images/products/soccerball1.jpg',
+            alt: '축구공'
+        }, {
+            name: '키보드',
+            price: 10000,
+            seller: '그랩',
+            imageUrl: '../../public/images/products/keyboard1.jpg',
+            alt: '키보드'
+        }, ];
+
+        let productsHtml = "";
+        for (var i = 0; i < products.length; i++) {
+            let product = products[i];
+            productsHtml = productsHtml +
+                '<div class="product-card">' +
+                '<img class="product-img" src="' +
+                product.imageUrl +
+                '" alt="' + product.alt + '" />' +
+                '<div class="product-contents">' +
+                '<span class="product-name">' +
+                product.name +
+                '</span>' +
+                '<span class="product-price">' +
+                product.price + '원' +
+                '</span>' +
+                '<div class="product-seller">' +
+                '<img class="product-avatar" src="../../public/images/icons/avatar.png" alt="아바타" />' +
+                '<span>' +
+                product.seller +
+                '</span>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        }
+        document.querySelector("#product-list").innerHTML = productsHtml;
+    */
+
+
+
+
+
+
+    /* 실습 1 */
+    /* document.querySelector().innerHtml 활용 */
+    /* document.querySelector("#product-list").innerHTML = "<p>대체할 구문</p>"; */
+    /*
+    document.querySelector("#product-list").innerHTML =
+        멀티커서: alt + 클릭
+        '<div class="product-card">' +
+        '<img class="product-img" src="../../public/images/products/basketball1.jpeg" alt="농구공" />' +
+        '<div class="product-contents">' +
+        '<span class="product-name">농구공 1호</span>' +
+        '<span class="product-price">50000 원</span>' +
+        '<div class="product-seller">' +
+        '<img class="product-avatar" src="../../public/images/icons/avatar.png" alt="아바타" />' +
+        '<span>그랩</span>' +
+        '</div>' +
+        '</div>' +
+        '</div>'; 
+    */
+</script>
+
+</html>
